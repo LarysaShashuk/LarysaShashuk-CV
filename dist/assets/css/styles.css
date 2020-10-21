@@ -498,8 +498,22 @@ body {
   font-weight: 600;
 }
 
-a {
+a:link {
   color: #437ED8;
+}
+
+a:visited {
+  color: #437ED8;
+}
+
+a:hover {
+  color: purple;
+  text-decoration: underline;
+}
+
+a:active {
+  color: red;
+  text-decoration: underline;
 }
 
 .mobile_show {
