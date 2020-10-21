@@ -1,0 +1,269 @@
+@import "utils/reset";
+@import "utils/responsive";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/vars";
+
+body {
+    @include flex(row, flex-start, center);
+    background-color: $bg_Gray;
+}
+
+.cvWrap {
+    @include size(90vw, auto);
+    background-color: $main_Gray;
+    margin: 40px;
+    padding: 20px;
+
+    @include flex(row, flex-start, space-between);
+
+    @include desktop {
+        width: 900px;
+    }
+
+    @include laptop {
+        width: 900px;
+    }
+
+    @include tablet {
+        width: 700px;
+    }
+
+    @include mobile-w {
+        @include flex(column, flex-start, space-between);
+    }
+
+    @include mobile {
+        @include flex(column, flex-start, space-between);
+    }
+}
+
+.leftBlock {
+    @include size(36%, auto);
+    @include flex(column, center, flex-start);
+
+    @include mobile {
+        @include size(100%, auto);
+        //padding-bottom: 20px;
+    }
+
+    @include mobile-w {
+        @include size(100%, auto);
+    }
+
+    &__photo {
+        @include size(80%, auto);
+
+        padding-bottom: 10px;
+
+        &__item {
+            @include size(100%, auto);
+        }
+    }
+
+    &__blockquote {
+        @include size(100%, auto);
+        @include flex(column, flex-start, flex-start);
+        @include size_10px;
+        background-color: $light_Blue_opas;
+        font-family: $font_OpenSans;
+        font-weight: 300;
+        line-height: 15px;
+        text-align: left;
+        margin-bottom: 10px;
+        padding: 10px 17px;
+
+        @include desktop {
+            line-height: 23px;
+        }
+
+        @include laptop {
+            line-height: 23px;
+        }
+
+        &__accent {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__skills {
+        @include size(100%, auto);
+        @include flex(column, flex-start, flex-start);
+        padding-left: 20px;
+
+        font-family: $font_Exo;
+
+        &__box {
+            @include size(100%, auto);
+            @include flex(column, flex-start, flex-start);
+            padding-bottom: 10px;
+
+            @include desktop {
+                padding-bottom: 20px;
+            }
+
+            @include laptop {
+                padding-bottom: 20px;
+            }
+        }
+
+        &__title {
+            @include size_15px;
+            font-weight: 700;
+        }
+
+        &__list {
+            padding-left: 15px;
+
+        }
+
+        &__item,
+        &__desc {
+            @include size_10px;
+            list-style-type: disc;
+            font-weight: 400;
+        }
+    }
+}
+
+.rightBlock {
+    @include size(60%, auto);
+    @include flex(column, flex-start, flex-start);
+
+
+    @include mobile {
+        @include size(100%, auto);
+    }
+
+    @include mobile-w {
+        @include size(100%, auto);
+    }
+
+    &__intro {
+        @include size(100%, auto);
+        @include flex(column, flex-end, flex-start);
+        background-color: $white;
+        padding: 12px 20px;
+        font-family: $font_Exo;
+
+
+        @include mobile {
+            @include flex(column, center, flex-start);
+        }
+
+        @include mobile-w {
+            @include flex(column, center, flex-start);
+        }
+
+        &__name {
+            @include size_30px;
+            color: $dark_Blue;
+            font-weight: 700;
+
+
+        }
+
+        &__position {
+            @include size_20px;
+            color: $light_Blue;
+            font-weight: 700;
+        }
+    }
+
+    &__contacts {
+        @include size(100%, auto);
+        @include flex(row, flex-start, flex-start);
+        @include size_12px;
+        padding: 20px;
+        font-family: $font_OpenSans;
+
+        @include mobile {
+            font-size: 10px;
+        }
+
+        &__leftPart {
+            @include size(auto, auto);
+            @include flex(column, flex-start, flex-start);
+        }
+
+        &__title {
+            font-weight: 700;
+        }
+
+        &__rightPart {
+            @include size(auto, auto);
+            @include flex(column, flex-start, flex-start);
+            padding-left: 50px;
+        }
+    }
+
+    &__mainInfo {
+        @include size(100%, auto);
+        @include flex(column, flex-start, flex-start);
+        background-color: $white;
+        padding: 10px;
+
+        &__wrap {
+            @include size(100%, auto);
+            @include flex(column, flex-start, flex-start);
+        }
+
+        &__themeBlock {
+            @include size(100%, auto);
+            @include flex(column, flex-start, flex-start);
+            font-family: $font_Exo;
+        }
+
+        &__title {
+            @include size_15px;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        &__project {
+            padding-bottom: 10px;
+        }
+
+        &__subtitle {
+            @include size_10px;
+            color: $light_Blue;
+            font-weight: 800;
+        }
+
+        &__desc {
+            @include size_7px;
+            font-weight: 400;
+
+            &__accent {
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+a {
+    color: $light_Blue;
+}
+
+.mobile_show {
+    display: none;
+
+    @include mobile {
+        display: flex;
+    }
+
+    @include mobile-w {
+        display: flex;
+    }
+}
+
+.mobile_hide {
+    @include mobile {
+        display: none;
+    }
+
+    @include mobile-w {
+        display: none;
+    }
+}
