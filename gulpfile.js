@@ -8,6 +8,7 @@ const path = {
     css: projectFolder + "/assets/css/",
     js: projectFolder + "/js/",
     img: projectFolder + "/assets/img/",
+    icons: projectFolder + "/assets/icons/",
     fonts: projectFolder + "/assets/fonts/",
   },
   src: {
@@ -15,12 +16,14 @@ const path = {
     css: sourceFolder + "/assets/scss/styles.scss",
     js: sourceFolder + "/js/**/*.js",
     img: sourceFolder + "/assets/img/**/*.{jpg, png, svg, gif, ico, webp}",
+    icons: sourceFolder + "/assets/icons/**/*.svg",
     fonts: sourceFolder + "/assets/fonts/*.ttf",
   },
   watch: {
     html: sourceFolder + "/**/*.html",
     css: sourceFolder + "/assets/scss/**/*.scss",
     js: sourceFolder + "/js/**/*.js",
+    icons: sourceFolder + "/assets/icons/**/*.svg",
     img: sourceFolder + "/assets/img/**/*.{jpg, png, svg, gif, ico, webp}",
   },
   clean: "./" + projectFolder + "/",
@@ -139,6 +142,22 @@ function images() {
     .pipe(browsersync.stream());
 }
 
+function icons() {
+  return src(path.src.icons)
+    .pipe(
+      imagemin({
+        progressive: true,
+        svgoPlugins: [{
+          removeViewBox: false,
+        }, ],
+        interlaced: true,
+        optimizationLevel: 3, // 0 to 7
+      })
+    )
+    .pipe(dest(path.build.icons))
+    .pipe(browsersync.stream());
+}
+
 function fonts(params) {
   src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts));
 
@@ -227,6 +246,7 @@ function watchFiles(params) {
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], images);
+  gulp.watch([path.watch.icons], icons);
 }
 
 function clean(params) {
@@ -235,13 +255,14 @@ function clean(params) {
 
 const build = gulp.series(
     clean,
-    gulp.parallel(js, css, html, images, fonts),
+    gulp.parallel(js, css, html, images, icons, fonts),
     fontsStyle
   ),
   watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
+exports.icons = icons;
 exports.images = images;
 exports.js = js;
 exports.css = css;
