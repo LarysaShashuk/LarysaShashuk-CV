@@ -105,41 +105,9 @@ th {
   ========================================================================== */
 
 @font-face {
-  font-family: "GreatVibes-Regular";
-  font-display: swap;
-  src: url("../fonts/GreatVibes-Regular.woff") format("woff"), url("../fonts/GreatVibes-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Roboto-BlackItalic";
-  font-display: swap;
-  src: url("../fonts/Roboto-BlackItalic.woff") format("woff"), url("../fonts/Roboto-BlackItalic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Lato-Thin";
-  font-display: swap;
-  src: url("../fonts/Lato-Thin.woff") format("woff"), url("../fonts/Lato-Thin.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Montserrat-Black";
   font-display: swap;
   src: url("../fonts/Montserrat-Black.woff") format("woff"), url("../fonts/Montserrat-Black.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Lato-Regular";
-  font-display: swap;
-  src: url("../fonts/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -598,6 +566,8 @@ a {
 
 @media (max-width: 420px) {
   .cvWrap {
+    width: 95vw;
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -611,6 +581,7 @@ a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    margin: 15px;
   }
 
   .leftBlock {
@@ -717,6 +688,8 @@ a {
 
 @media (min-width: 421px) and (max-width: 767px) {
   .cvWrap {
+    width: 95vw;
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -730,6 +703,7 @@ a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    margin: 15px;
   }
 
   .leftBlock {
