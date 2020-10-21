@@ -566,6 +566,8 @@ a {
 
 @media (max-width: 420px) {
   .cvWrap {
+    width: 95vw;
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -579,6 +581,7 @@ a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    margin: 15px;
   }
 
   .leftBlock {
@@ -685,6 +688,8 @@ a {
 
 @media (min-width: 421px) and (max-width: 767px) {
   .cvWrap {
+    width: 95vw;
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -698,6 +703,7 @@ a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    margin: 15px;
   }
 
   .leftBlock {

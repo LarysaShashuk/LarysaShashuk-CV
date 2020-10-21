@@ -30,11 +30,15 @@ body {
     }
 
     @include mobile-w {
+        @include size(95vw, auto);
         @include flex(column, flex-start, space-between);
+        margin: 15px;
     }
 
     @include mobile {
+        @include size(95vw, auto);
         @include flex(column, flex-start, space-between);
+        margin: 15px;
     }
 }
 
